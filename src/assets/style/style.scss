@@ -1,0 +1,38 @@
+//variables------------------------------------------------------------------
+
+$xl : "xl";
+$lg : "lg";
+$md : "md";
+$sm : "sm";
+$xs : "xs";
+
+//mixin----------------------------------------------------------------------
+
+@mixin mq($arg) {
+    @if $arg==$lg {
+        @media screen and (min-width: 1025px) {
+            @content;
+        }
+    }
+
+    @else if $arg==$md {
+        @media screen and (min-width: 600px) and (max-width: 1024px) {
+            @content;
+        }
+    }
+
+    @else if $arg==$sm {
+        @media screen and (min-width: 350px) and (max-width: 599px) {
+            @content;
+        }
+    }
+
+    @else if $arg==$xs {
+        @media screen and (max-width: 349px) {
+            @content;
+        }
+    }
+}
+
+//Style----------------------------------------------------------------------
+@import './destyle.css';
